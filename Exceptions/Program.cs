@@ -9,13 +9,19 @@ namespace Exceptions
 {
     class Program
     {
+        static List<int> correctNumbers = new List<int>();
         static void Main(string[] args)
         {
             StreamReader();
             string line;
             Console.WriteLine();
             Console.WriteLine("Numbers are: ");
-            Print("correctNumbers.txt");
+            //Print("correctNumbers.txt");
+            for (int i = 0; i < correctNumbers.Count; i++)
+            {
+                Console.WriteLine(correctNumbers[i] + " ");
+            }
+            Console.WriteLine();
             Console.WriteLine("The other strings are: ");
             Print("incorrectNumbers.txt");
             Console.WriteLine("Press any key to close the application");
@@ -76,12 +82,14 @@ namespace Exceptions
                 }
                 if (string.Compare(number.ToString(), text) == 0)
                 {
+                    correctNumbers.Add(number);
                     StreamWriter("correctNumbers.txt", text);
                 }
                 else
                 {
                     StreamWriter("incorrectNumbers.txt", text);
-                }   
+                } 
+             
         }
 
         //Method to write into a txt file. 
