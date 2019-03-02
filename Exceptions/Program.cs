@@ -72,6 +72,7 @@ namespace Exceptions
         //Method that does the parsing and writes every string into the correct file using a streamwriter. 
         //Every string will be reconstructed into a number using the ASCII codes. 
         //If the new created number is exactly the same as the old word, then it's a number, otherwise it's another type of string. 
+        //Numbers will also be written inside a list. 
         private static void TryParse(string text)
         {
             int number = 0;
